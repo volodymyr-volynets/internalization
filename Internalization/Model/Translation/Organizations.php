@@ -50,8 +50,8 @@ class Organizations extends \Object\Table {
 	public $cache_memory = false;
 
 	public $data_asset = [
-		'classification' => 'client_confidential',
+		'classification' => 'public',
 		'protection' => 2,
-		'scope' => 'enterprise'
+		'scope' => 'global'
 	];
 }

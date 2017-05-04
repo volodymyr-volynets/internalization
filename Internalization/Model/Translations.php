@@ -16,10 +16,10 @@ class Translations extends \Object\Table {
 		'in_translation_tenant_id' => ['name' => 'Tenant #', 'domain' => 'tenant_id'],
 		'in_translation_id' => ['name' => 'Translation #', 'domain' => 'big_id_sequence'],
 		'in_translation_i18n_id' => ['name' => 'I18n #', 'domain' => 'group_id', 'null' => true],
-		'in_translation_from_language_code' => ['name' => 'Language Code', 'domain' => 'language_code'],
-		'in_translation_from_text' => ['name' => 'System Text', 'type' => 'varchar', 'length' => 2500],
-		'in_translation_to_language_code' => ['name' => 'Language Code', 'domain' => 'language_code'],
-		'in_translation_to_text' => ['name' => 'Translated Text', 'type' => 'varchar', 'length' => 2500],
+		'in_translation_from_language_code' => ['name' => 'From Language Code', 'domain' => 'language_code'],
+		'in_translation_from_text' => ['name' => 'From Text', 'type' => 'varchar', 'length' => 2500],
+		'in_translation_to_language_code' => ['name' => 'To Language Code', 'domain' => 'language_code'],
+		'in_translation_to_text' => ['name' => 'To Text', 'type' => 'varchar', 'length' => 2500],
 		'in_translation_javascript' => ['name' => 'Javascript', 'type' => 'boolean'],
 		'in_translation_inactive' => ['name' => 'Inactive', 'type' => 'boolean']
 	];
@@ -30,23 +30,13 @@ class Translations extends \Object\Table {
 			'type' => 'fk',
 			'columns' => ['in_translation_tenant_id', 'in_translation_from_language_code'],
 			'foreign_model' => '\Numbers\Internalization\Internalization\Model\Language\Codes',
-			'foreign_columns' => ['in_language_tenant_id', 'in_language_code'],
-			'options' => [
-				'match' => 'simple',
-				'update' => 'no action',
-				'delete' => 'no action'
-			]
+			'foreign_columns' => ['in_language_tenant_id', 'in_language_code']
 		],
 		'in_translation_to_language_code_fk' => [
 			'type' => 'fk',
 			'columns' => ['in_translation_tenant_id', 'in_translation_to_language_code'],
 			'foreign_model' => '\Numbers\Internalization\Internalization\Model\Language\Codes',
-			'foreign_columns' => ['in_language_tenant_id', 'in_language_code'],
-			'options' => [
-				'match' => 'simple',
-				'update' => 'no action',
-				'delete' => 'no action'
-			]
+			'foreign_columns' => ['in_language_tenant_id', 'in_language_code']
 		]
 	];
 	public $indexes = [
@@ -61,7 +51,7 @@ class Translations extends \Object\Table {
 	];
 
 	public $cache = false;
-	public $cache_tags = ['translations'];
+	public $cache_tags = [];
 	public $cache_memory = false;
 
 	public $data_asset = [

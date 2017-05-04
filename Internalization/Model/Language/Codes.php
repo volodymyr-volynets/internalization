@@ -32,8 +32,7 @@ class Codes extends \Object\Table {
 	public $audit = false;
 	public $optimistic_lock = true;
 	public $options_map = [
-		'in_language_name' => 'name',
-		'in_language_native_name' => 'name'
+		'in_language_name' => 'name'
 	];
 	public $options_active = [];
 	public $engine = [
