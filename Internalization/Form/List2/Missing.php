@@ -55,7 +55,7 @@ class Missing extends \Object\Form\Wrapper\List2 {
 		],
 		'sort' => [
 			'__sort' => [
-				'__sort' => ['order' => 1, 'row_order' => 100, 'label_name' => 'Sort', 'domain' => 'code', 'details_unique_select' => true, 'percent' => 50, 'null' => true, 'method' => 'select', 'options' => self::list_sort_options, 'onchange' => 'this.form.submit();'],
+				'__sort' => ['order' => 1, 'row_order' => 100, 'label_name' => 'Sort', 'domain' => 'code', 'details_unique_select' => true, 'percent' => 50, 'null' => true, 'method' => 'select', 'options' => self::LIST_SORT_OPTIONS, 'onchange' => 'this.form.submit();'],
 				'__order' => ['order' => 2, 'label_name' => 'Order', 'type' => 'smallint', 'default' => SORT_ASC, 'percent' => 50, 'null' => true, 'method' => 'select', 'no_choose' => true, 'options_model' => '\Object\Data\Model\Order', 'onchange' => 'this.form.submit();'],
 			]
 		],
@@ -78,7 +78,7 @@ class Missing extends \Object\Form\Wrapper\List2 {
 			'in_translmiss_id' => SORT_ASC
 		]
 	];
-	const list_sort_options = [
+	const LIST_SORT_OPTIONS = [
 		'in_translmiss_id' => ['name' => 'Missing #'],
 		'in_translmiss_from_text' => ['name' => 'From Text']
 	];
