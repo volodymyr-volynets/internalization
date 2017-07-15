@@ -14,6 +14,7 @@ class Import extends \Object\Import {
 					'sm_module_code' => 'IN',
 					'sm_module_type' => 20,
 					'sm_module_name' => 'I/N Internalization',
+					'sm_module_abbreviation' => 'I/N',
 					'sm_module_icon' => 'adjust',
 					'sm_module_transactions' => 0,
 					'sm_module_multiple' => 0,
