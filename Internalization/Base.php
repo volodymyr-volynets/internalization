@@ -42,7 +42,12 @@ class Base {
 		if (!empty($final_group)) {
 			$options = array_merge_hard($options, $final_group);
 		}
-		self::$options = $options;
+		// user settings
+		$user_settings = \User::get('internalization');
+		if (!empty($user_settings)) {
+			foreach ($user_settings as $k => $v) if (empty($v)) unset($user_settings[$k]);
+		}
+		self::$options = array_merge_hard($options, $user_settings);
 		return $options;
 	}
 

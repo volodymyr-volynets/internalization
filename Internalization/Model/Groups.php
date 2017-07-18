@@ -16,6 +16,7 @@ class Groups extends \Object\Table {
 		'in_group_tenant_id' => ['name' => 'Tenant #', 'domain' => 'tenant_id'],
 		'in_group_id' => ['name' => 'Group #', 'domain' => 'group_id_sequence'],
 		'in_group_name' => ['name' => 'Name', 'domain' => 'name'],
+		// i18n settings
 		'in_group_language_code' => ['name' => 'Language Code', 'domain' => 'language_code'],
 		'in_group_locale_code' => ['name' => 'Locale Code', 'domain' => 'locale_code'],
 		'in_group_timezone_code' => ['name' => 'Timezone Code', 'domain' => 'timezone_code'],
