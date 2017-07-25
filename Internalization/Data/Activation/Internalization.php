@@ -5,7 +5,7 @@ class Internalization extends \Object\Import {
 	public $data = [
 		'language_codes' => [
 			'options' => [
-				'pk' => ['tm_structure_code'],
+				'pk' => ['in_language_code'],
 				'model' => '\Numbers\Internalization\Internalization\Model\Language\Codes',
 				'method' => 'save_insert_new'
 			],
