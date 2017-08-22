@@ -14,4 +14,11 @@ class Codes extends \Object\Controller\Permission {
 		]);
 		echo $form->render();
 	}
+	public function actionImport() {
+		$form = new \Object\Form\Wrapper\Import([
+			'model' => '\Numbers\Internalization\Internalization\Form\Language\Codes',
+			'input' => \Request::input()
+		]);
+		echo $form->render();
+	}
 }

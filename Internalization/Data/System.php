@@ -83,6 +83,11 @@ class System extends \Object\Import {
 							'sm_rsrcmp_method_code' => 'Edit',
 							'sm_rsrcmp_action_id' => '::id::Record_Delete',
 							'sm_rsrcmp_inactive' => 0
+						],
+						[
+							'sm_rsrcmp_method_code' => 'Import',
+							'sm_rsrcmp_action_id' => '::id::Import_Records',
+							'sm_rsrcmp_inactive' => 0
 						]
 					]
 				],
@@ -158,6 +163,11 @@ class System extends \Object\Import {
 						[
 							'sm_rsrcmp_method_code' => 'Edit',
 							'sm_rsrcmp_action_id' => '::id::Record_Delete',
+							'sm_rsrcmp_inactive' => 0
+						],
+						[
+							'sm_rsrcmp_method_code' => 'Import',
+							'sm_rsrcmp_action_id' => '::id::Import_Records',
 							'sm_rsrcmp_inactive' => 0
 						]
 					]
@@ -235,6 +245,11 @@ class System extends \Object\Import {
 							'sm_rsrcmp_method_code' => 'Edit',
 							'sm_rsrcmp_action_id' => '::id::Record_Delete',
 							'sm_rsrcmp_inactive' => 0
+						],
+						[
+							'sm_rsrcmp_method_code' => 'Import',
+							'sm_rsrcmp_action_id' => '::id::Import_Records',
+							'sm_rsrcmp_inactive' => 0
 						]
 					]
 				],
@@ -311,6 +326,11 @@ class System extends \Object\Import {
 							'sm_rsrcmp_method_code' => 'Edit',
 							'sm_rsrcmp_action_id' => '::id::Record_Delete',
 							'sm_rsrcmp_inactive' => 0
+						],
+						[
+							'sm_rsrcmp_method_code' => 'Import',
+							'sm_rsrcmp_action_id' => '::id::Import_Records',
+							'sm_rsrcmp_inactive' => 0
 						]
 					]
 				],
@@ -386,6 +406,11 @@ class System extends \Object\Import {
 						[
 							'sm_rsrcmp_method_code' => 'Edit',
 							'sm_rsrcmp_action_id' => '::id::Record_Delete',
+							'sm_rsrcmp_inactive' => 0
+						],
+						[
+							'sm_rsrcmp_method_code' => 'Import',
+							'sm_rsrcmp_action_id' => '::id::Import_Records',
 							'sm_rsrcmp_inactive' => 0
 						]
 					]

@@ -8,7 +8,8 @@ class Timezones extends \Object\Form\Wrapper\Base {
 		'actions' => [
 			'refresh' => true,
 			'back' => true,
-			'new' => true
+			'new' => true,
+			'import' => true
 		]
 	];
 	public $containers = [
@@ -31,6 +32,7 @@ class Timezones extends \Object\Form\Wrapper\Base {
 		]
 	];
 	public $collection = [
+		'name' => 'Timezones',
 		'model' => '\Numbers\Internalization\Internalization\Model\Timezones'
 	];
 

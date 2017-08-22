@@ -8,7 +8,8 @@ class Groups extends \Object\Form\Wrapper\Base {
 		'actions' => [
 			'refresh' => true,
 			'back' => true,
-			'new' => true
+			'new' => true,
+			'import' => true
 		]
 	];
 	public $containers = [
@@ -52,6 +53,7 @@ class Groups extends \Object\Form\Wrapper\Base {
 		]
 	];
 	public $collection = [
+		'name' => 'Groups',
 		'model' => '\Numbers\Internalization\Internalization\Model\Groups'
 	];
 }

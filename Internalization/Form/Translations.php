@@ -8,7 +8,8 @@ class Translations extends \Object\Form\Wrapper\Base {
 		'actions' => [
 			'refresh' => true,
 			'new' => true,
-			'back' => true
+			'back' => true,
+			'import' => true
 		]
 	];
 	public $containers = [
@@ -76,9 +77,11 @@ class Translations extends \Object\Form\Wrapper\Base {
 		]
 	];
 	public $collection = [
+		'name' => 'Translations',
 		'model' => '\Numbers\Internalization\Internalization\Model\Translations',
 		'details' => [
 			'\Numbers\Internalization\Internalization\Model\Translation\Organizations' => [
+				'name' => 'Organizations',
 				'pk' => ['in_translorg_tenant_id', 'in_translorg_translation_id', 'in_translorg_organization_id'],
 				'type' => '1M',
 				'map' => ['in_translation_tenant_id' => 'in_translorg_tenant_id', 'in_translation_id' => 'in_translorg_translation_id']

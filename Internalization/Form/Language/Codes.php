@@ -8,7 +8,8 @@ class Codes extends \Object\Form\Wrapper\Base {
 		'actions' => [
 			'refresh' => true,
 			'back' => true,
-			'new' => true
+			'new' => true,
+			'import' => true
 		]
 	];
 	public $containers = [
@@ -37,6 +38,7 @@ class Codes extends \Object\Form\Wrapper\Base {
 		]
 	];
 	public $collection = [
+		'name' => 'Language Codes',
 		'model' => '\Numbers\Internalization\Internalization\Model\Language\Codes'
 	];
 }
