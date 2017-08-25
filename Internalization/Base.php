@@ -110,7 +110,7 @@ class Base {
 		}
 finish:
 		// append translation symbol for system language
-		if (\Debug::$debug && \Application::get('flag.global.__content_type') == 'text/html' && empty($skip_translation_symbol) && empty($options['skip_translation_symbol']) && $to_language == 'sm0') {
+		if (\Debug::$debug && empty($options['skip_i_symbol']) && \Application::get('flag.global.__content_type') == 'text/html' && empty($skip_translation_symbol) && empty($options['skip_translation_symbol']) && $to_language == 'sm0') {
 			$color = $translated ? 'blue' : 'red';
 			$result.= '<span style="color: ' . $color . '; font-weight: bold:"><span style="display:none"> (</span>i<span style="display:none">)</span></span>';
 		}
