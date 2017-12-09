@@ -47,7 +47,7 @@ class Base {
 		if (!empty($user_settings)) {
 			foreach ($user_settings as $k => $v) if (empty($v)) unset($user_settings[$k]);
 		}
-		self::$options = array_merge_hard($options, $user_settings);
+		$options = self::$options = array_merge_hard($options, $user_settings);
 		return $options;
 	}
 

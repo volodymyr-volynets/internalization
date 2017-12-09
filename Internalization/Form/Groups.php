@@ -35,7 +35,7 @@ class Groups extends \Object\Form\Wrapper\Base {
 				'in_group_organization_id' => ['order' => 2, 'label_name' => 'Organization', 'domain' => 'organization_id', 'null' => true, 'percent' => 50, 'method' => 'select', 'options_model' => '\Numbers\Users\Organizations\DataSource\Organizations'],
 			],
 			'format' => [
-				self::SEPARATOR_HORIZONTAL => ['order' => 100, 'row_order' => 500, 'label_name' => 'Format', 'icon' => 'hourglass-o', 'percent' => 100],
+				self::SEPARATOR_HORIZONTAL => ['order' => 100, 'row_order' => 500, 'label_name' => 'Format', 'icon' => 'far fa-hourglass', 'percent' => 100],
 			],
 			'in_group_format_date' => [
 				'in_group_format_date' => ['order' => 1, 'row_order' => 600, 'label_name' => 'Date Format', 'domain' => 'code', 'percent' => 25, 'required' => true, 'method' => 'select', 'preset' => true, 'options_model' => '\Numbers\Internalization\Internalization\Model\Groups::presets', 'options_options' => ['columns' => 'in_group_format_date'], 'description' => 'Y - year, m - month, d - day, H - hour, i - minute, s = second, g - short hour, a - am/pm, u - miliseconds'],
