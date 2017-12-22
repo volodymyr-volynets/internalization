@@ -2,7 +2,9 @@
 
 namespace Numbers\Internalization\Internalization\Form;
 class Timezones extends \Object\Form\Wrapper\Base {
-	public $form_link = 'timezones';
+	public $form_link = 'in_timezones';
+	public $module_code = 'IN';
+	public $title = 'I/N Timezones Form';
 	public $options = [
 		'segment' => self::SEGMENT_FORM,
 		'actions' => [

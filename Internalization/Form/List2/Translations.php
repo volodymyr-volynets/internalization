@@ -2,7 +2,9 @@
 
 namespace Numbers\Internalization\Internalization\Form\List2;
 class Translations extends \Object\Form\Wrapper\List2 {
-	public $form_link = 'translations_list';
+	public $form_link = 'in_translations_list';
+	public $module_code = 'IN';
+	public $title = 'I/N Translations List';
 	public $options = [
 		'segment' => self::SEGMENT_LIST,
 		'actions' => [

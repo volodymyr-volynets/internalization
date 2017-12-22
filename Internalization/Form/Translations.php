@@ -2,7 +2,9 @@
 
 namespace Numbers\Internalization\Internalization\Form;
 class Translations extends \Object\Form\Wrapper\Base {
-	public $form_link = 'translations';
+	public $form_link = 'in_translations';
+	public $module_code = 'IN';
+	public $title = 'I/N Translations Form';
 	public $options = [
 		'segment' => self::SEGMENT_FORM,
 		'actions' => [

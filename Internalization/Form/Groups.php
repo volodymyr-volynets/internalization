@@ -2,7 +2,9 @@
 
 namespace Numbers\Internalization\Internalization\Form;
 class Groups extends \Object\Form\Wrapper\Base {
-	public $form_link = 'groups';
+	public $form_link = 'in_groups';
+	public $module_code = 'IN';
+	public $title = 'I/N Groups Form';
 	public $options = [
 		'segment' => self::SEGMENT_FORM,
 		'actions' => [

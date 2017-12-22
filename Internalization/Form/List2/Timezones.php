@@ -2,7 +2,9 @@
 
 namespace Numbers\Internalization\Internalization\Form\List2;
 class Timezones extends \Object\Form\Wrapper\List2 {
-	public $form_link = 'timezones_list';
+	public $form_link = 'in_timezones_list';
+	public $module_code = 'IN';
+	public $title = 'I/N Timezones List';
 	public $options = [
 		'segment' => self::SEGMENT_LIST,
 		'actions' => [

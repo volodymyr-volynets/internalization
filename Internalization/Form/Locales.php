@@ -2,7 +2,9 @@
 
 namespace Numbers\Internalization\Internalization\Form;
 class Locales extends \Object\Form\Wrapper\Base {
-	public $form_link = 'locales';
+	public $form_link = 'in_locales';
+	public $module_code = 'IN';
+	public $title = 'I/N Locales Form';
 	public $options = [
 		'segment' => self::SEGMENT_FORM,
 		'actions' => [

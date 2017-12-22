@@ -2,7 +2,9 @@
 
 namespace Numbers\Internalization\Internalization\Form\List2;
 class Locales extends \Object\Form\Wrapper\List2 {
-	public $form_link = 'locales_list';
+	public $form_link = 'in_locales_list';
+	public $module_code = 'IN';
+	public $title = 'I/N Locales List';
 	public $options = [
 		'segment' => self::SEGMENT_LIST,
 		'actions' => [

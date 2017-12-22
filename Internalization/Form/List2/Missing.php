@@ -2,7 +2,9 @@
 
 namespace Numbers\Internalization\Internalization\Form\List2;
 class Missing extends \Object\Form\Wrapper\List2 {
-	public $form_link = 'missing_list';
+	public $form_link = 'in_missing_list';
+	public $module_code = 'IN';
+	public $title = 'I/N Missing List';
 	public $options = [
 		'segment' => self::SEGMENT_LIST,
 		'actions' => [

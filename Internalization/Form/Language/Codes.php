@@ -2,7 +2,9 @@
 
 namespace Numbers\Internalization\Internalization\Form\Language;
 class Codes extends \Object\Form\Wrapper\Base {
-	public $form_link = 'language_codes';
+	public $form_link = 'in_language_codes';
+	public $module_code = 'IN';
+	public $title = 'I/N Language Codes Form';
 	public $options = [
 		'segment' => self::SEGMENT_FORM,
 		'actions' => [

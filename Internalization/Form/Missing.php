@@ -2,7 +2,9 @@
 
 namespace Numbers\Internalization\Internalization\Form;
 class Missing extends \Object\Form\Wrapper\Base {
-	public $form_link = 'missing';
+	public $form_link = 'in_missing';
+	public $module_code = 'IN';
+	public $title = 'I/N Missing Form';
 	public $options = [
 		'segment' => self::SEGMENT_FORM,
 		'actions' => [
