@@ -38,6 +38,7 @@ class Groups extends \Object\DataSource {
 			'format_timestamp' => 'a.in_group_format_timestamp',
 			'format_amount_frm' => 'a.in_group_format_amount_frm',
 			'format_amount_fs' => 'a.in_group_format_amount_fs',
+			'format_uom' => 'a.in_group_format_uom',
 			'rtl' => 'b.in_language_rtl'
 		]);
 		// join

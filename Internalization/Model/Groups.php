@@ -27,8 +27,9 @@ class Groups extends \Object\Table {
 		'in_group_format_time' => ['name' => 'Time Format', 'domain' => 'code'],
 		'in_group_format_datetime' => ['name' => 'Datetime Format', 'domain' => 'code'],
 		'in_group_format_timestamp' => ['name' => 'Timestamp Format', 'domain' => 'code'],
-		'in_group_format_amount_frm' => ['name' => 'Amounts In Forms', 'domain' => 'type_id', 'options_model' => '\Numbers\Internalization\Internalization\Model\Format\Amounts'],
-		'in_group_format_amount_fs' => ['name' => 'Amounts In Financial Statement', 'domain' => 'type_id', 'options_model' => '\Numbers\Internalization\Internalization\Model\Format\Amounts']
+		'in_group_format_amount_frm' => ['name' => 'Amounts In Forms', 'domain' => 'type_id', 'options_model' => '\Object\Format\Amounts'],
+		'in_group_format_amount_fs' => ['name' => 'Amounts In Financial Statement', 'domain' => 'type_id', 'options_model' => '\Object\Format\Amounts'],
+		'in_group_format_uom' => ['name' => 'Unit of Measures', 'domain' => 'group_code', 'default' => 'METRIC', 'options_model' => '\Object\Format\UoM']
 	];
 	public $constraints = [
 		'in_groups_pk' => ['type' => 'pk', 'columns' => ['in_group_tenant_id', 'in_group_id']],

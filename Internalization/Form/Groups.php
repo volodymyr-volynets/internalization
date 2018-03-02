@@ -45,6 +45,9 @@ class Groups extends \Object\Form\Wrapper\Base {
 				'in_group_format_datetime' => ['order' => 3, 'label_name' => 'Datetime Format', 'domain' => 'code', 'percent' => 25, 'required' => true, 'method' => 'select', 'preset' => true, 'options_model' => '\Numbers\Internalization\Internalization\Model\Groups::presets', 'options_options' => ['columns' => 'in_group_format_datetime'], 'description' => 'Y - year, m - month, d - day, H - hour, i - minute, s = second, g - short hour, a - am/pm'],
 				'in_group_format_timestamp' => ['order' => 4, 'label_name' => 'Timestamp Format', 'domain' => 'code', 'percent' => 25, 'required' => true, 'method' => 'select', 'preset' => true, 'options_model' => '\Numbers\Internalization\Internalization\Model\Groups::presets', 'options_options' => ['columns' => 'in_group_format_timestamp'], 'description' => 'Y - year, m - month, d - day, H - hour, i - minute, s = second, g - short hour, a - am/pm, u - miliseconds']
 			],
+			'in_group_format_uom' => [
+				'in_group_format_uom' => ['order' => 1, 'row_order' => 650, 'label_name' => 'Unit of Measures', 'domain' => 'group_code', 'default' => 'METRIC', 'required' => true, 'method' => 'select', 'options_model' => '\Object\Format\UoM']
+			],
 			'in_group_format_amount_frm' => [
 				'in_group_format_amount_frm' => ['order' => 1, 'row_order' => 700, 'label_name' => 'Amounts In Forms', 'domain' => 'type_id', 'null' => true, 'required' => true, 'method' => 'select', 'options_model' => '\Object\Format\Amounts'],
 				'in_group_format_amount_fs' => ['order' => 2, 'label_name' => 'Amounts In Financial Statement', 'domain' => 'type_id', 'null' => true, 'required' => true, 'method' => 'select', 'options_model' => '\Object\Format\Amounts']
