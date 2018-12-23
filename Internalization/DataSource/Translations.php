@@ -19,6 +19,7 @@ class Translations extends \Object\DataSource {
 	public $cache_memory = false;
 
 	public $primary_model = '\Numbers\Internalization\Internalization\Model\Translations';
+	public $primary_params = ['skip_acl' => true];
 	public $parameters = [
 		'from_language' => ['name' => 'From Language', 'domain' => 'language_code', 'required' => true],
 		'to_language' => ['name' => 'To Language', 'domain' => 'language_code', 'required' => true],
@@ -42,7 +43,7 @@ class Translations extends \Object\DataSource {
 			$this->query->where('AND', ['a.in_translation_javascript', '=', 1]);
 		}
 		$this->query->where('AND NOT', function (& $query) use ($parameters) {
-			$query = \Numbers\Internalization\Internalization\Model\Translation\Organizations::queryBuilderStatic(['alias' => 'inner_a'])->select();
+			$query = \Numbers\Internalization\Internalization\Model\Translation\Organizations::queryBuilderStatic(['alias' => 'inner_a', 'skip_acl' => true])->select();
 			$query->columns(1);
 			$query->where('AND', ['inner_a.in_translorg_translation_id', '=', 'a.in_translation_id', true]);
 		}, true);

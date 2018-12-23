@@ -39,11 +39,11 @@ class Missing extends \Object\Form\Wrapper\Base {
 				'in_translmiss_from_text' => ['order' => 1, 'row_order' => 300, 'label_name' => 'From Text', 'type' => 'varchar', 'length' => 2500, 'method' => 'textarea', 'required' => true, 'percent' => 100]
 			],
 			'in_translmiss_javascript' => [
-				'in_translmiss_organization_id' => ['order' => 1, 'row_order' => 400, 'label_name' => 'Organization', 'domain' => 'organization_id', 'null' => true, 'method' => 'select', 'options_model' => '\Numbers\Users\Organizations\DataSource\Organizations'],
+				'in_translmiss_organization_id' => ['order' => 1, 'row_order' => 400, 'label_name' => 'Organization', 'domain' => 'organization_id', 'null' => true, 'method' => 'select', 'options_model' => '\Numbers\Users\Organizations\Model\Organizations'],
 				'in_translmiss_javascript' => ['order' => 2, 'label_name' => 'Javascript', 'type' => 'boolean', 'percent' => 50],
 			],
 			'url' => [
-				'url' => ['order' => 1, 'row_order' => 500, 'label_name' => 'Create Translation', 'custom_renderer' => 'Numbers\Internalization\Internalization\Form\Missing::renderLink'],
+				'url' => ['order' => 1, 'row_order' => 500, 'label_name' => 'Create Translation', 'custom_renderer' => '\Numbers\Internalization\Internalization\Form\Missing::renderLink'],
 			]
 		],
 		'buttons' => [
