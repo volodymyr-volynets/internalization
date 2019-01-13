@@ -16,6 +16,8 @@ class Groups extends \Object\Table {
 		'in_group_tenant_id' => ['name' => 'Tenant #', 'domain' => 'tenant_id'],
 		'in_group_id' => ['name' => 'Group #', 'domain' => 'group_id_sequence'],
 		'in_group_name' => ['name' => 'Name', 'domain' => 'name'],
+		'in_group_country_code' => ['name' => 'Country Code', 'domain' => 'country_code', 'null' => true],
+		'in_group_currency_code' => ['name' => 'Currency Code', 'domain' => 'currency_code', 'null' => true],
 		// i18n settings
 		'in_group_language_code' => ['name' => 'Language Code', 'domain' => 'language_code'],
 		'in_group_locale_code' => ['name' => 'Locale Code', 'domain' => 'locale_code'],
@@ -56,6 +58,18 @@ class Groups extends \Object\Table {
 			'columns' => ['in_group_tenant_id', 'in_group_organization_id'],
 			'foreign_model' => '\Numbers\Users\Organizations\Model\Organizations',
 			'foreign_columns' => ['on_organization_tenant_id', 'on_organization_id']
+		],
+		'in_group_country_code_fk' => [
+			'type' => 'fk',
+			'columns' => ['in_group_tenant_id', 'in_group_country_code'],
+			'foreign_model' => '\Numbers\Countries\Countries\Model\Countries',
+			'foreign_columns' => ['cm_country_tenant_id', 'cm_country_code']
+		],
+		'in_group_currency_code_fk' => [
+			'type' => 'fk',
+			'columns' => ['in_group_tenant_id', 'in_group_currency_code'],
+			'foreign_model' => '\Numbers\Countries\Currencies\Model\Currencies',
+			'foreign_columns' => ['cy_currency_tenant_id', 'cy_currency_code']
 		]
 	];
 	public $indexes = [
@@ -64,8 +78,13 @@ class Groups extends \Object\Table {
 	public $history = false;
 	public $audit = false;
 	public $optimistic_lock = true;
-	public $options_map = [];
-	public $options_active = [];
+	public $options_map = [
+		'in_group_name' => 'name',
+		'in_group_country_code' => 'flag_country_code'
+	];
+	public $options_active = [
+		'in_group_inactive' => 0
+	];
 	public $engine = [
 		'MySQLi' => 'InnoDB'
 	];

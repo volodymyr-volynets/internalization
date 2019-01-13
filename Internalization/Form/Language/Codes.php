@@ -33,7 +33,10 @@ class Codes extends \Object\Form\Wrapper\Base {
 			'in_language_parent_language_code' => [
 				'in_language_family_name' => ['order' => 1, 'row_order' => 300, 'label_name' => 'Family Name', 'domain' => 'name', 'null' => true, 'percent' => 50],
 				'in_language_rtl' => ['order' => 2, 'label_name' => 'Right to Left', 'type' => 'boolean', 'percent' => 50],
-			]
+			],
+			'in_language_country_code' => [
+				'in_language_country_code' => ['order' => 1, 'row_order' => 450, 'label_name' => 'Country', 'domain' => 'country_code', 'null' => true, 'percent' => 50, 'method' => 'select', 'options_model' => '\Numbers\Countries\Countries\Model\Countries::optionsActive'],
+			],
 		],
 		'buttons' => [
 			self::BUTTONS => self::BUTTONS_DATA_GROUP
