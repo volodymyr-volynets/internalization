@@ -40,6 +40,7 @@ class Codes extends \Object\Table {
 	public $optimistic_lock = true;
 	public $options_map = [
 		'in_language_name' => 'name',
+		'in_language_native_name' => 'name',
 		'in_language_country_code' => 'flag_country_code',
 	];
 	public $options_active = [
