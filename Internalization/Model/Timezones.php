@@ -16,6 +16,7 @@ class Timezones extends \Object\Table {
 		'in_timezone_tenant_id' => ['name' => 'Tenant #', 'domain' => 'tenant_id'],
 		'in_timezone_code' => ['name' => 'Timezone Code', 'domain' => 'timezone_code'],
 		'in_timezone_name' => ['name' => 'Name', 'domain' => 'name'],
+		'in_timezone_hours_offset' => ['name' => 'Hours Offset', 'type' => 'smallint', 'default' => 0],
 		'in_timezone_inactive' => ['name' => 'Inactive', 'type' => 'boolean']
 	];
 	public $constraints = [

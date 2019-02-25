@@ -27,6 +27,9 @@ class Timezones extends \Object\Form\Wrapper\Base {
 			],
 			'in_timezone_name' => [
 				'in_timezone_name' => ['order' => 1, 'row_order' => 200, 'label_name' => 'Name', 'domain' => 'name', 'percent' => 100, 'required' => true],
+			],
+			'in_timezone_hours_offset' => [
+				'in_timezone_hours_offset' => ['order' => 1, 'row_order' => 300, 'label_name' => 'Hours Offset', 'type' => 'smallint', 'default' => 0, 'readonly' => true],
 			]
 		],
 		'buttons' => [
@@ -39,12 +42,23 @@ class Timezones extends \Object\Form\Wrapper\Base {
 	];
 
 	public function validate(& $form) {
+		// validate if timezone is valid
 		if (!empty($form->values['in_timezone_code'])) {
 			$current_timezone = date_default_timezone_get();
 			if (!date_default_timezone_set($form->values['in_timezone_code'])) {
 				$form->error('danger', 'Provided timezone is not valid!', 'in_timezone_code');
 			}
 			date_default_timezone_set($current_timezone);
+		}
+		// calculate offset
+		if (!empty($form->values['in_timezone_code'])) {
+			$local_tz = new \DateTimeZone(\Format::$options['server_timezone_code']);
+			$local = new \DateTime('now', $local_tz);
+			$user_tz = new \DateTimeZone($form->values['in_timezone_code']);
+			$user = new \DateTime('now', $user_tz);
+			$local_offset = $local->getOffset() / 3600;
+			$user_offset = $user->getOffset() / 3600;
+			$form->values['in_timezone_hours_offset'] = ($user_offset - $local_offset);
 		}
 	}
 }
