@@ -80,7 +80,8 @@ class Groups extends \Object\Table {
 	public $optimistic_lock = true;
 	public $options_map = [
 		'in_group_name' => 'name',
-		'in_group_country_code' => 'flag_country_code'
+		'in_group_country_code' => 'flag_country_code',
+		'in_group_inactive' => 'inactive'
 	];
 	public $options_active = [
 		'in_group_inactive' => 0
