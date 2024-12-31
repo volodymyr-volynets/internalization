@@ -1,0 +1,18 @@
+{
+    "Global": "Глобальний",
+    "Groups": "Групи",
+    "INGroups": "Групи I/N",
+    "INInternalization": "Інтерналізація I/N",
+    "INLanguageCodes": "I/N Коди мов",
+    "INLocales": "I/N Локалі",
+    "INMissingTranslations": "I/N відсутні переклади",
+    "INTimezones": "Часові пояси I/N",
+    "INTranslations": "I/N Переклади",
+    "Internalization": "Інтерналізація",
+    "Languages": "Мови",
+    "Locales": "Локалі",
+    "MissingTranslations": "Відсутні переклади",
+    "Operations": "Операції",
+    "Timezones": "Часові пояси",
+    "Translations": "Переклади"
+}

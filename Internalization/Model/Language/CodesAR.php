@@ -2,130 +2,185 @@
 
 namespace Numbers\Internalization\Internalization\Model\Language;
 class CodesAR extends \Object\ActiveRecord {
-	/**
-	 * @var string
-	 */
-	public string $object_table_class = \Numbers\Internalization\Internalization\Model\Language\Codes::class;
 
-	/**
-	 * Constructing object
-	 *
-	 * @param array $options
-	 *		skip_db_object
-	 *		skip_table_object
-	 */
-	public function __construct($options = []) {
-		if (empty($options['skip_table_object'])) {
-			$this->object_table_object = new $this->object_table_class($options);
-		}
-	}
-	/**
-	 * Tenant #
-	 *
-	 *
-	 *
-	 * {domain{tenant_id}}
-	 *
-	 * @var int Domain: tenant_id Type: integer
-	 */
-	public ?int $in_language_tenant_id = NULL;
 
-	/**
-	 * Language Code
-	 *
-	 *
-	 *
-	 * {domain{language_code}}
-	 *
-	 * @var string Domain: language_code Type: char
-	 */
-	public ?string $in_language_code = null;
 
-	/**
-	 * Language Code (2)
-	 *
-	 *
-	 *
-	 *
-	 *
-	 * @var string Type: char
-	 */
-	public ?string $in_language_code2 = null;
+    /**
+     * @var string
+     */
+    public string $object_table_class = \Numbers\Internalization\Internalization\Model\Language\Codes::class;
 
-	/**
-	 * Name
-	 *
-	 *
-	 *
-	 * {domain{name}}
-	 *
-	 * @var string Domain: name Type: varchar
-	 */
-	public ?string $in_language_name = null;
+    /**
+     * @var array
+     */
+    public array $object_table_pk = ['in_language_tenant_id','in_language_code'];
+    /**
+     * Tenant #
+     *
+     *
+     *
+     * {domain{tenant_id}}
+     *
+     * @var int|null Domain: tenant_id Type: integer
+     */
+    public int|null $in_language_tenant_id = NULL {
+                        get => $this->in_language_tenant_id;
+                        set {
+                            $this->setFullPkAndFilledColumn('in_language_tenant_id', $value);
+                            $this->in_language_tenant_id = $value;
+                        }
+                    }
 
-	/**
-	 * Native Name
-	 *
-	 *
-	 *
-	 * {domain{name}}
-	 *
-	 * @var string Domain: name Type: varchar
-	 */
-	public ?string $in_language_native_name = null;
+    /**
+     * Language Code
+     *
+     *
+     *
+     * {domain{language_code}}
+     *
+     * @var string|null Domain: language_code Type: char
+     */
+    public string|null $in_language_code = null {
+                        get => $this->in_language_code;
+                        set {
+                            $this->setFullPkAndFilledColumn('in_language_code', $value);
+                            $this->in_language_code = $value;
+                        }
+                    }
 
-	/**
-	 * Right to Left
-	 *
-	 *
-	 *
-	 *
-	 *
-	 * @var int Type: boolean
-	 */
-	public ?int $in_language_rtl = 0;
+    /**
+     * Language Code (2)
+     *
+     *
+     *
+     *
+     *
+     * @var string|null Type: char
+     */
+    public string|null $in_language_code2 = null {
+                        get => $this->in_language_code2;
+                        set {
+                            $this->setFullPkAndFilledColumn('in_language_code2', $value);
+                            $this->in_language_code2 = $value;
+                        }
+                    }
 
-	/**
-	 * Family Name
-	 *
-	 *
-	 *
-	 * {domain{name}}
-	 *
-	 * @var string Domain: name Type: varchar
-	 */
-	public ?string $in_language_family_name = null;
+    /**
+     * Name
+     *
+     *
+     *
+     * {domain{name}}
+     *
+     * @var string|null Domain: name Type: varchar
+     */
+    public string|null $in_language_name = null {
+                        get => $this->in_language_name;
+                        set {
+                            $this->setFullPkAndFilledColumn('in_language_name', $value);
+                            $this->in_language_name = $value;
+                        }
+                    }
 
-	/**
-	 * Country Code
-	 *
-	 *
-	 *
-	 * {domain{country_code}}
-	 *
-	 * @var string Domain: country_code Type: char
-	 */
-	public ?string $in_language_country_code = null;
+    /**
+     * Native Name
+     *
+     *
+     *
+     * {domain{name}}
+     *
+     * @var string|null Domain: name Type: varchar
+     */
+    public string|null $in_language_native_name = null {
+                        get => $this->in_language_native_name;
+                        set {
+                            $this->setFullPkAndFilledColumn('in_language_native_name', $value);
+                            $this->in_language_native_name = $value;
+                        }
+                    }
 
-	/**
-	 * Inactive
-	 *
-	 *
-	 *
-	 *
-	 *
-	 * @var int Type: boolean
-	 */
-	public ?int $in_language_inactive = 0;
+    /**
+     * Right to Left
+     *
+     *
+     *
+     *
+     *
+     * @var int|null Type: boolean
+     */
+    public int|null $in_language_rtl = 0 {
+                        get => $this->in_language_rtl;
+                        set {
+                            $this->setFullPkAndFilledColumn('in_language_rtl', $value);
+                            $this->in_language_rtl = $value;
+                        }
+                    }
 
-	/**
-	 * Optimistic Lock
-	 *
-	 *
-	 *
-	 * {domain{optimistic_lock}}
-	 *
-	 * @var string Domain: optimistic_lock Type: timestamp
-	 */
-	public ?string $in_language_optimistic_lock = 'now()';
+    /**
+     * Family Name
+     *
+     *
+     *
+     * {domain{name}}
+     *
+     * @var string|null Domain: name Type: varchar
+     */
+    public string|null $in_language_family_name = null {
+                        get => $this->in_language_family_name;
+                        set {
+                            $this->setFullPkAndFilledColumn('in_language_family_name', $value);
+                            $this->in_language_family_name = $value;
+                        }
+                    }
+
+    /**
+     * Country Code
+     *
+     *
+     *
+     * {domain{country_code}}
+     *
+     * @var string|null Domain: country_code Type: char
+     */
+    public string|null $in_language_country_code = null {
+                        get => $this->in_language_country_code;
+                        set {
+                            $this->setFullPkAndFilledColumn('in_language_country_code', $value);
+                            $this->in_language_country_code = $value;
+                        }
+                    }
+
+    /**
+     * Inactive
+     *
+     *
+     *
+     *
+     *
+     * @var int|null Type: boolean
+     */
+    public int|null $in_language_inactive = 0 {
+                        get => $this->in_language_inactive;
+                        set {
+                            $this->setFullPkAndFilledColumn('in_language_inactive', $value);
+                            $this->in_language_inactive = $value;
+                        }
+                    }
+
+    /**
+     * Optimistic Lock
+     *
+     *
+     *
+     * {domain{optimistic_lock}}
+     *
+     * @var string|null Domain: optimistic_lock Type: timestamp
+     */
+    public string|null $in_language_optimistic_lock = 'now()' {
+                        get => $this->in_language_optimistic_lock;
+                        set {
+                            $this->setFullPkAndFilledColumn('in_language_optimistic_lock', $value);
+                            $this->in_language_optimistic_lock = $value;
+                        }
+                    }
 }

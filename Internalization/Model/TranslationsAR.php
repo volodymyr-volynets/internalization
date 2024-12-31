@@ -2,119 +2,168 @@
 
 namespace Numbers\Internalization\Internalization\Model;
 class TranslationsAR extends \Object\ActiveRecord {
-	/**
-	 * @var string
-	 */
-	public string $object_table_class = \Numbers\Internalization\Internalization\Model\Translations::class;
 
-	/**
-	 * Constructing object
-	 *
-	 * @param array $options
-	 *		skip_db_object
-	 *		skip_table_object
-	 */
-	public function __construct($options = []) {
-		if (empty($options['skip_table_object'])) {
-			$this->object_table_object = new $this->object_table_class($options);
-		}
-	}
-	/**
-	 * Tenant #
-	 *
-	 *
-	 *
-	 * {domain{tenant_id}}
-	 *
-	 * @var int Domain: tenant_id Type: integer
-	 */
-	public ?int $in_translation_tenant_id = NULL;
 
-	/**
-	 * Translation #
-	 *
-	 *
-	 *
-	 * {domain{big_id_sequence}}
-	 *
-	 * @var int Domain: big_id_sequence Type: bigserial
-	 */
-	public ?int $in_translation_id = null;
 
-	/**
-	 * I18n #
-	 *
-	 *
-	 *
-	 * {domain{group_id}}
-	 *
-	 * @var int Domain: group_id Type: integer
-	 */
-	public ?int $in_translation_i18n_id = NULL;
+    /**
+     * @var string
+     */
+    public string $object_table_class = \Numbers\Internalization\Internalization\Model\Translations::class;
 
-	/**
-	 * From Language Code
-	 *
-	 *
-	 *
-	 * {domain{language_code}}
-	 *
-	 * @var string Domain: language_code Type: char
-	 */
-	public ?string $in_translation_from_language_code = null;
+    /**
+     * @var array
+     */
+    public array $object_table_pk = ['in_translation_tenant_id','in_translation_id'];
+    /**
+     * Tenant #
+     *
+     *
+     *
+     * {domain{tenant_id}}
+     *
+     * @var int|null Domain: tenant_id Type: integer
+     */
+    public int|null $in_translation_tenant_id = NULL {
+                        get => $this->in_translation_tenant_id;
+                        set {
+                            $this->setFullPkAndFilledColumn('in_translation_tenant_id', $value);
+                            $this->in_translation_tenant_id = $value;
+                        }
+                    }
 
-	/**
-	 * From Text
-	 *
-	 *
-	 *
-	 *
-	 *
-	 * @var string Type: varchar
-	 */
-	public ?string $in_translation_from_text = null;
+    /**
+     * Translation #
+     *
+     *
+     *
+     * {domain{big_id_sequence}}
+     *
+     * @var int|null Domain: big_id_sequence Type: bigserial
+     */
+    public int|null $in_translation_id = null {
+                        get => $this->in_translation_id;
+                        set {
+                            $this->setFullPkAndFilledColumn('in_translation_id', $value);
+                            $this->in_translation_id = $value;
+                        }
+                    }
 
-	/**
-	 * To Language Code
-	 *
-	 *
-	 *
-	 * {domain{language_code}}
-	 *
-	 * @var string Domain: language_code Type: char
-	 */
-	public ?string $in_translation_to_language_code = null;
+    /**
+     * I18n #
+     *
+     *
+     *
+     * {domain{group_id}}
+     *
+     * @var int|null Domain: group_id Type: integer
+     */
+    public int|null $in_translation_i18n_id = NULL {
+                        get => $this->in_translation_i18n_id;
+                        set {
+                            $this->setFullPkAndFilledColumn('in_translation_i18n_id', $value);
+                            $this->in_translation_i18n_id = $value;
+                        }
+                    }
 
-	/**
-	 * To Text
-	 *
-	 *
-	 *
-	 *
-	 *
-	 * @var string Type: varchar
-	 */
-	public ?string $in_translation_to_text = null;
+    /**
+     * From Language Code
+     *
+     *
+     *
+     * {domain{language_code}}
+     *
+     * @var string|null Domain: language_code Type: char
+     */
+    public string|null $in_translation_from_language_code = null {
+                        get => $this->in_translation_from_language_code;
+                        set {
+                            $this->setFullPkAndFilledColumn('in_translation_from_language_code', $value);
+                            $this->in_translation_from_language_code = $value;
+                        }
+                    }
 
-	/**
-	 * Javascript
-	 *
-	 *
-	 *
-	 *
-	 *
-	 * @var int Type: boolean
-	 */
-	public ?int $in_translation_javascript = 0;
+    /**
+     * From Text
+     *
+     *
+     *
+     *
+     *
+     * @var string|null Type: varchar
+     */
+    public string|null $in_translation_from_text = null {
+                        get => $this->in_translation_from_text;
+                        set {
+                            $this->setFullPkAndFilledColumn('in_translation_from_text', $value);
+                            $this->in_translation_from_text = $value;
+                        }
+                    }
 
-	/**
-	 * Inactive
-	 *
-	 *
-	 *
-	 *
-	 *
-	 * @var int Type: boolean
-	 */
-	public ?int $in_translation_inactive = 0;
+    /**
+     * To Language Code
+     *
+     *
+     *
+     * {domain{language_code}}
+     *
+     * @var string|null Domain: language_code Type: char
+     */
+    public string|null $in_translation_to_language_code = null {
+                        get => $this->in_translation_to_language_code;
+                        set {
+                            $this->setFullPkAndFilledColumn('in_translation_to_language_code', $value);
+                            $this->in_translation_to_language_code = $value;
+                        }
+                    }
+
+    /**
+     * To Text
+     *
+     *
+     *
+     *
+     *
+     * @var string|null Type: varchar
+     */
+    public string|null $in_translation_to_text = null {
+                        get => $this->in_translation_to_text;
+                        set {
+                            $this->setFullPkAndFilledColumn('in_translation_to_text', $value);
+                            $this->in_translation_to_text = $value;
+                        }
+                    }
+
+    /**
+     * Javascript
+     *
+     *
+     *
+     *
+     *
+     * @var int|null Type: boolean
+     */
+    public int|null $in_translation_javascript = 0 {
+                        get => $this->in_translation_javascript;
+                        set {
+                            $this->setFullPkAndFilledColumn('in_translation_javascript', $value);
+                            $this->in_translation_javascript = $value;
+                        }
+                    }
+
+    /**
+     * Inactive
+     *
+     *
+     *
+     *
+     *
+     * @var int|null Type: boolean
+     */
+    public int|null $in_translation_inactive = 0 {
+                        get => $this->in_translation_inactive;
+                        set {
+                            $this->setFullPkAndFilledColumn('in_translation_inactive', $value);
+                            $this->in_translation_inactive = $value;
+                        }
+                    }
 }

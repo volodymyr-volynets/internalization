@@ -1,0 +1,18 @@
+{
+    "Global": "Global",
+    "Groups": "Groups",
+    "INGroups": "I/N Groups",
+    "INInternalization": "I/N Internalization",
+    "INLanguageCodes": "I/N Language Codes",
+    "INLocales": "I/N Locales",
+    "INMissingTranslations": "I/N Missing Translations",
+    "INTimezones": "I/N Timezones",
+    "INTranslations": "I/N Translations",
+    "Internalization": "Internalization",
+    "Languages": "Languages",
+    "Locales": "Locales",
+    "MissingTranslations": "Missing Translations",
+    "Operations": "Operations",
+    "Timezones": "Timezones",
+    "Translations": "Translations"
+}

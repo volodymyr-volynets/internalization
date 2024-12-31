@@ -1,0 +1,18 @@
+{
+    "Global": "Глобальный",
+    "Groups": "Группы",
+    "INGroups": "Группы I/N",
+    "INInternalization": "Интернализация I/N",
+    "INLanguageCodes": "Коды языков I/N",
+    "INLocales": "I/N Локалс",
+    "INMissingTranslations": "I/N Отсутствующие переводы",
+    "INTimezones": "I/N часовые пояса",
+    "INTranslations": "Переводы I/N",
+    "Internalization": "Интернализация",
+    "Languages": "Языки",
+    "Locales": "Локалы",
+    "MissingTranslations": "Отсутствующие переводы",
+    "Operations": "Операции",
+    "Timezones": "Часовые пояса",
+    "Translations": "Переводы"
+}
