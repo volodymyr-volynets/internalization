@@ -4,15 +4,15 @@
     "INGroups": "Grupos I/N",
     "INInternalization": "Internalización I/N",
     "INLanguageCodes": "Códigos de idioma I/N",
-    "INLocales": "Configuraciones locales I/N",
+    "INLocales": "Configuraciones regionales de I/N",
     "INMissingTranslations": "N/I Traducciones faltantes",
     "INTimezones": "Zonas horarias I/N",
     "INTranslations": "Traducciones I/N",
     "Internalization": "Internalización",
     "Languages": "Idiomas",
-    "Locales": "Localidades",
+    "Locales": "Locales",
     "MissingTranslations": "Traducciones faltantes",
     "Operations": "Operaciones",
-    "Timezones": "Zonas horarias",
+    "Timezones": "zonas horarias",
     "Translations": "Traducciones"
 }

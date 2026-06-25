@@ -20,7 +20,7 @@ class Localizations extends Table
     public $module_code = 'IN';
     public $title = 'I/N Localizations';
     public $name = 'in_localizations';
-    public $pk = ['in_localization_tenant_id', 'in_localization_id'];
+    public $pk = ['in_localization_tenant_id', 'in_localization_locale_code', 'in_localization_key'];
     public $tenant = true;
     public $orderby;
     public $limit;

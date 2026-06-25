@@ -1,19 +1,30 @@
 <?php
 
+/*
+ * This file is part of Numbers Framework.
+ *
+ * (c) Volodymyr Volynets <volodymyr.volynets@gmail.com>
+ *
+ * This source file is subject to the Apache 2.0 license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Numbers\Internalization\Internalization\Model;
-class TimezonesAR extends \Object\ActiveRecord {
 
+use Object\ActiveRecord;
 
-
+class TimezonesAR extends ActiveRecord
+{
     /**
      * @var string
      */
-    public string $object_table_class = \Numbers\Internalization\Internalization\Model\Timezones::class;
+    public string $object_table_class = Timezones::class;
 
     /**
      * @var array
      */
     public array $object_table_pk = ['in_timezone_tenant_id','in_timezone_code'];
+
     /**
      * Tenant #
      *
@@ -23,13 +34,13 @@ class TimezonesAR extends \Object\ActiveRecord {
      *
      * @var int|null Domain: tenant_id Type: integer
      */
-    public int|null $in_timezone_tenant_id = NULL {
-                        get => $this->in_timezone_tenant_id;
-                        set {
-                            $this->setFullPkAndFilledColumn('in_timezone_tenant_id', $value);
-                            $this->in_timezone_tenant_id = $value;
-                        }
-                    }
+    public int|null $in_timezone_tenant_id = null {
+        get => $this->in_timezone_tenant_id;
+        set {
+            $this->setFullPkAndFilledColumn('in_timezone_tenant_id', $value);
+            $this->in_timezone_tenant_id = $value;
+        }
+    }
 
     /**
      * Timezone Code
@@ -41,12 +52,12 @@ class TimezonesAR extends \Object\ActiveRecord {
      * @var string|null Domain: timezone_code Type: varchar
      */
     public string|null $in_timezone_code = null {
-                        get => $this->in_timezone_code;
-                        set {
-                            $this->setFullPkAndFilledColumn('in_timezone_code', $value);
-                            $this->in_timezone_code = $value;
-                        }
-                    }
+        get => $this->in_timezone_code;
+        set {
+            $this->setFullPkAndFilledColumn('in_timezone_code', $value);
+            $this->in_timezone_code = $value;
+        }
+    }
 
     /**
      * Name
@@ -58,12 +69,12 @@ class TimezonesAR extends \Object\ActiveRecord {
      * @var string|null Domain: name Type: varchar
      */
     public string|null $in_timezone_name = null {
-                        get => $this->in_timezone_name;
-                        set {
-                            $this->setFullPkAndFilledColumn('in_timezone_name', $value);
-                            $this->in_timezone_name = $value;
-                        }
-                    }
+        get => $this->in_timezone_name;
+        set {
+            $this->setFullPkAndFilledColumn('in_timezone_name', $value);
+            $this->in_timezone_name = $value;
+        }
+    }
 
     /**
      * Hours Offset
@@ -75,12 +86,12 @@ class TimezonesAR extends \Object\ActiveRecord {
      * @var int|null Type: smallint
      */
     public int|null $in_timezone_hours_offset = 0 {
-                        get => $this->in_timezone_hours_offset;
-                        set {
-                            $this->setFullPkAndFilledColumn('in_timezone_hours_offset', $value);
-                            $this->in_timezone_hours_offset = $value;
-                        }
-                    }
+        get => $this->in_timezone_hours_offset;
+        set {
+            $this->setFullPkAndFilledColumn('in_timezone_hours_offset', $value);
+            $this->in_timezone_hours_offset = $value;
+        }
+    }
 
     /**
      * Inactive
@@ -92,12 +103,12 @@ class TimezonesAR extends \Object\ActiveRecord {
      * @var int|null Type: boolean
      */
     public int|null $in_timezone_inactive = 0 {
-                        get => $this->in_timezone_inactive;
-                        set {
-                            $this->setFullPkAndFilledColumn('in_timezone_inactive', $value);
-                            $this->in_timezone_inactive = $value;
-                        }
-                    }
+        get => $this->in_timezone_inactive;
+        set {
+            $this->setFullPkAndFilledColumn('in_timezone_inactive', $value);
+            $this->in_timezone_inactive = $value;
+        }
+    }
 
     /**
      * Optimistic Lock
@@ -109,10 +120,10 @@ class TimezonesAR extends \Object\ActiveRecord {
      * @var string|null Domain: optimistic_lock Type: timestamp
      */
     public string|null $in_timezone_optimistic_lock = 'now()' {
-                        get => $this->in_timezone_optimistic_lock;
-                        set {
-                            $this->setFullPkAndFilledColumn('in_timezone_optimistic_lock', $value);
-                            $this->in_timezone_optimistic_lock = $value;
-                        }
-                    }
+        get => $this->in_timezone_optimistic_lock;
+        set {
+            $this->setFullPkAndFilledColumn('in_timezone_optimistic_lock', $value);
+            $this->in_timezone_optimistic_lock = $value;
+        }
+    }
 }

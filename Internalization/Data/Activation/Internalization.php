@@ -123,7 +123,7 @@ class Internalization extends Import
                 [
                     'in_group_tenant_id' => null,
                     'in_group_name' => 'English (Canada)',
-                    'in_group_native_name' => null,
+                    'in_group_native_name' => 'English',
                     'in_group_language_code' => 'eng',
                     'in_group_locale_code' => 'en_CA.UTF-8',
                     'in_group_timezone_code' => 'America/Toronto',
