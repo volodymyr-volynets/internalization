@@ -84,10 +84,26 @@ class Base
      * @param string|array $key
      * @param mixed $text
      * @param array $options
+     *      bool main_locale
+     *      string locale_code
+     *      bool __as_json
+     *      numeric __plural
      * @return string
      */
     public function loc(string|array $key, mixed $text = '', array $options = []): string
     {
+        // json string
+        if (is_string($key) && is_json($key, ['is_object' => true])) {
+            $temp = json_decode($key, true);
+            $key = [];
+            // db sorts the keys
+            foreach ($temp as $k => $v) {
+                if (str_starts_with($k, 'NF.')) {
+                    $key[$k] = $v;
+                }
+            }
+            $key = $key + $temp;
+        }
         // if we have composite key
         if (is_array($key)) {
             $composite = $key;
@@ -99,13 +115,25 @@ class Base
                 $options[$k] = $v;
             }
         }
+        // determine if we need to search in models
+        $parts = explode('.', $key);
+        $is_form = $parts[1] == 'Form';
+        $found = false;
+        $original_text = $text;
+        // plural
+        $is_plural_check = array_key_exists('__plural', $options);
+        // process json files
         $temp = explode('.', $key, 3);
         $dir = \Application::get(['application', 'path_full']) . DIRECTORY_SEPARATOR . 'Miscellaneous' . DIRECTORY_SEPARATOR . 'Localization' . DIRECTORY_SEPARATOR;
         $filename = $temp[0] . '.' . $temp[1] . '.json';
         $filekey = $temp[0] . '.' . $temp[1];
         $locale_key = $temp[2];
-        $locale_code = self::$options['locale_code'];
+        $locale_code = $options['locale_code'] ?? self::$options['locale_code'];
         $default_locale = \Application::get('flag.global.loc.default_locale') ?? 'en_CA.UTF-8';
+        // if we need to fetch from main locale
+        if (!empty($options['main_locale'])) {
+            goto main_locale_only;
+        }
         if (!isset(self::$localizations[$locale_code][$filekey])) {
             if (file_exists($dir . $locale_code . DIRECTORY_SEPARATOR . $filename)) {
                 self::$localizations[$locale_code][$filekey] = File::readJSON($dir . $locale_code . DIRECTORY_SEPARATOR . $filename);
@@ -115,15 +143,35 @@ class Base
         }
         if (isset(self::$localizations[$locale_code][$filekey][$locale_key])) {
             $text = self::$localizations[$locale_code][$filekey][$locale_key];
-        } elseif ($locale_code !== $default_locale) { // if we do not have that localized we load from default locale
-            if (file_exists($dir . $default_locale . DIRECTORY_SEPARATOR . $filename)) {
-                self::$localizations[$default_locale][$filekey] = File::readJSON($dir . $default_locale . DIRECTORY_SEPARATOR . $filename);
-            } else {
-                self::$localizations[$default_locale][$filekey] = [];
+            if ($is_plural_check) {
+                $text = $this->checkForPlural($text, self::$localizations[$locale_code][$filekey], $locale_key, $options['__plural']);
             }
+            $found = true;
+        } elseif ($locale_code !== $default_locale) { // if we do not have that localized we load from default locale
+            main_locale_only:
+                        if (file_exists($dir . $default_locale . DIRECTORY_SEPARATOR . $filename)) {
+                            self::$localizations[$default_locale][$filekey] = File::readJSON($dir . $default_locale . DIRECTORY_SEPARATOR . $filename);
+                        } else {
+                            self::$localizations[$default_locale][$filekey] = [];
+                        }
             if (isset(self::$localizations[$default_locale][$filekey][$locale_key])) {
                 $text = self::$localizations[$default_locale][$filekey][$locale_key];
+                if ($is_plural_check) {
+                    $text = $this->checkForPlural($text, self::$localizations[$default_locale][$filekey], $locale_key, $options['__plural']);
+                }
+                $found = true;
             }
+        }
+        // if not found
+        if (!$found && $is_form) {
+            $parts[1] = 'Model';
+            return loc(implode('.', $parts), $original_text);
+        }
+        // return json for one time use
+        if (!empty($options['__as_json'])) {
+            $result = array_merge_hard([$key => $original_text], $options);
+            unset($result['__as_json']);
+            return json_encode($result);
         }
         // process params
         if ($text && strpos($text, '{') !== false) {
@@ -136,6 +184,37 @@ class Base
                     }
                     $text = str_replace('{' . $v . '}', $options[$v], $text);
                 }
+            }
+        }
+        return html_entity_decode($text ?? '');
+    }
+
+    /**
+     * Check for plural
+     *
+     * @param string $text
+     * @param array $localizations
+     * @param string $key
+     * @param mixed $plural
+     * @return string
+     */
+    protected function checkForPlural(string $text, array & $localizations, string $key, mixed $plural): string
+    {
+        $plural = floatval($plural);
+        $settings = array_key_extract_by_prefix($localizations, $key, false, false);
+        ksort($settings);
+        foreach ($settings as $k => $v) {
+            if (!str_starts_with($k, '[') || !str_ends_with($k, ']')) {
+                continue;
+            }
+            $from = explode('-', trim_begin_and_end($k, '[]'));
+            if ($from[1] == 'N') {
+                $from[1] = PHP_INT_MAX;
+            }
+            $from[0] = intval($from[0]);
+            $from[1] = intval($from[1]);
+            if (between($plural, $from[0], $from[1])) {
+                return $v;
             }
         }
         return $text;

@@ -39,7 +39,8 @@ class Groups extends Base
                 'in_group_inactive' => ['order' => 2, 'label_name' => 'Inactive', 'type' => 'boolean', 'percent' => 5]
             ],
             'in_group_name' => [
-                'in_group_name' => ['order' => 1, 'row_order' => 200, 'label_name' => 'Name', 'domain' => 'name', 'percent' => 100, 'required' => true],
+                'in_group_name' => ['order' => 1, 'row_order' => 200, 'label_name' => 'Name', 'domain' => 'name', 'percent' => 50, 'required' => true],
+                'in_group_native_name' => ['order' => 2, 'label_name' => 'Native Name', 'domain' => 'name', 'percent' => 50, 'required' => true]
             ],
             'in_group_language_code' => [
                 'in_group_language_code' => ['order' => 1, 'row_order' => 300, 'label_name' => 'Language', 'domain' => 'language_code', 'percent' => 50, 'required' => true, 'method' => 'select', 'options_model' => '\Numbers\Internalization\Internalization\Model\Language\Codes'],
@@ -54,7 +55,7 @@ class Groups extends Base
                 'in_group_currency_code' => ['order' => 2, 'label_name' => 'Currency Code', 'domain' => 'currency_code', 'null' => true, 'percent' => 50, 'method' => 'select', 'options_model' => '\Numbers\Countries\Currencies\Model\Currencies::optionsActive'],
             ],
             'format' => [
-                self::SEPARATOR_HORIZONTAL => ['order' => 100, 'row_order' => 500, 'label_name' => 'Format', 'icon' => 'far fa-hourglass', 'percent' => 100],
+                self::SEPARATOR_HORIZONTAL => ['order' => 100, 'row_order' => 500, 'label_name' => 'Format', 'icon' => 'fa-regular fa-hourglass', 'percent' => 100],
             ],
             'in_group_format_date' => [
                 'in_group_format_date' => ['order' => 1, 'row_order' => 600, 'label_name' => 'Date Format', 'domain' => 'code', 'percent' => 25, 'required' => true, 'method' => 'select', 'preset' => true, 'options_model' => '\Numbers\Internalization\Internalization\Model\Groups::presets', 'options_options' => ['columns' => 'in_group_format_date'], 'description' => 'Y - year, m - month, d - day'],
