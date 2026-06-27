@@ -1,14 +1,24 @@
 <?php
 
+/*
+ * This file is part of Numbers Framework.
+ *
+ * (c) Volodymyr Volynets <volodymyr.volynets@gmail.com>
+ *
+ * This source file is subject to the Apache 2.0 license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Numbers\Internalization\Internalization\Model;
-class TranslationsAR extends \Object\ActiveRecord {
 
+use Object\ActiveRecord;
 
-
+class TranslationsAR extends ActiveRecord
+{
     /**
      * @var string
      */
-    public string $object_table_class = \Numbers\Internalization\Internalization\Model\Translations::class;
+    public string $object_table_class = Translations::class;
 
     /**
      * @var array
@@ -23,13 +33,13 @@ class TranslationsAR extends \Object\ActiveRecord {
      *
      * @var int|null Domain: tenant_id Type: integer
      */
-    public int|null $in_translation_tenant_id = NULL {
-                        get => $this->in_translation_tenant_id;
-                        set {
-                            $this->setFullPkAndFilledColumn('in_translation_tenant_id', $value);
-                            $this->in_translation_tenant_id = $value;
-                        }
-                    }
+    public int|null $in_translation_tenant_id = null {
+        get => $this->in_translation_tenant_id;
+        set {
+            $this->setFullPkAndFilledColumn('in_translation_tenant_id', $value);
+            $this->in_translation_tenant_id = $value;
+        }
+    }
 
     /**
      * Translation #
@@ -41,12 +51,12 @@ class TranslationsAR extends \Object\ActiveRecord {
      * @var int|null Domain: big_id_sequence Type: bigserial
      */
     public int|null $in_translation_id = null {
-                        get => $this->in_translation_id;
-                        set {
-                            $this->setFullPkAndFilledColumn('in_translation_id', $value);
-                            $this->in_translation_id = $value;
-                        }
-                    }
+        get => $this->in_translation_id;
+        set {
+            $this->setFullPkAndFilledColumn('in_translation_id', $value);
+            $this->in_translation_id = $value;
+        }
+    }
 
     /**
      * I18n #
@@ -57,13 +67,13 @@ class TranslationsAR extends \Object\ActiveRecord {
      *
      * @var int|null Domain: group_id Type: integer
      */
-    public int|null $in_translation_i18n_id = NULL {
-                        get => $this->in_translation_i18n_id;
-                        set {
-                            $this->setFullPkAndFilledColumn('in_translation_i18n_id', $value);
-                            $this->in_translation_i18n_id = $value;
-                        }
-                    }
+    public int|null $in_translation_i18n_id = null {
+        get => $this->in_translation_i18n_id;
+        set {
+            $this->setFullPkAndFilledColumn('in_translation_i18n_id', $value);
+            $this->in_translation_i18n_id = $value;
+        }
+    }
 
     /**
      * From Language Code
@@ -75,12 +85,12 @@ class TranslationsAR extends \Object\ActiveRecord {
      * @var string|null Domain: language_code Type: char
      */
     public string|null $in_translation_from_language_code = null {
-                        get => $this->in_translation_from_language_code;
-                        set {
-                            $this->setFullPkAndFilledColumn('in_translation_from_language_code', $value);
-                            $this->in_translation_from_language_code = $value;
-                        }
-                    }
+        get => $this->in_translation_from_language_code;
+        set {
+            $this->setFullPkAndFilledColumn('in_translation_from_language_code', $value);
+            $this->in_translation_from_language_code = $value;
+        }
+    }
 
     /**
      * From Text
@@ -92,12 +102,12 @@ class TranslationsAR extends \Object\ActiveRecord {
      * @var string|null Type: varchar
      */
     public string|null $in_translation_from_text = null {
-                        get => $this->in_translation_from_text;
-                        set {
-                            $this->setFullPkAndFilledColumn('in_translation_from_text', $value);
-                            $this->in_translation_from_text = $value;
-                        }
-                    }
+        get => $this->in_translation_from_text;
+        set {
+            $this->setFullPkAndFilledColumn('in_translation_from_text', $value);
+            $this->in_translation_from_text = $value;
+        }
+    }
 
     /**
      * To Language Code
@@ -109,12 +119,12 @@ class TranslationsAR extends \Object\ActiveRecord {
      * @var string|null Domain: language_code Type: char
      */
     public string|null $in_translation_to_language_code = null {
-                        get => $this->in_translation_to_language_code;
-                        set {
-                            $this->setFullPkAndFilledColumn('in_translation_to_language_code', $value);
-                            $this->in_translation_to_language_code = $value;
-                        }
-                    }
+        get => $this->in_translation_to_language_code;
+        set {
+            $this->setFullPkAndFilledColumn('in_translation_to_language_code', $value);
+            $this->in_translation_to_language_code = $value;
+        }
+    }
 
     /**
      * To Text
@@ -126,12 +136,12 @@ class TranslationsAR extends \Object\ActiveRecord {
      * @var string|null Type: varchar
      */
     public string|null $in_translation_to_text = null {
-                        get => $this->in_translation_to_text;
-                        set {
-                            $this->setFullPkAndFilledColumn('in_translation_to_text', $value);
-                            $this->in_translation_to_text = $value;
-                        }
-                    }
+        get => $this->in_translation_to_text;
+        set {
+            $this->setFullPkAndFilledColumn('in_translation_to_text', $value);
+            $this->in_translation_to_text = $value;
+        }
+    }
 
     /**
      * Javascript
@@ -143,12 +153,12 @@ class TranslationsAR extends \Object\ActiveRecord {
      * @var int|null Type: boolean
      */
     public int|null $in_translation_javascript = 0 {
-                        get => $this->in_translation_javascript;
-                        set {
-                            $this->setFullPkAndFilledColumn('in_translation_javascript', $value);
-                            $this->in_translation_javascript = $value;
-                        }
-                    }
+        get => $this->in_translation_javascript;
+        set {
+            $this->setFullPkAndFilledColumn('in_translation_javascript', $value);
+            $this->in_translation_javascript = $value;
+        }
+    }
 
     /**
      * Inactive
@@ -160,10 +170,10 @@ class TranslationsAR extends \Object\ActiveRecord {
      * @var int|null Type: boolean
      */
     public int|null $in_translation_inactive = 0 {
-                        get => $this->in_translation_inactive;
-                        set {
-                            $this->setFullPkAndFilledColumn('in_translation_inactive', $value);
-                            $this->in_translation_inactive = $value;
-                        }
-                    }
+        get => $this->in_translation_inactive;
+        set {
+            $this->setFullPkAndFilledColumn('in_translation_inactive', $value);
+            $this->in_translation_inactive = $value;
+        }
+    }
 }

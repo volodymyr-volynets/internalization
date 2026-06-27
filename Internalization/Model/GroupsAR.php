@@ -1,14 +1,24 @@
 <?php
 
+/*
+ * This file is part of Numbers Framework.
+ *
+ * (c) Volodymyr Volynets <volodymyr.volynets@gmail.com>
+ *
+ * This source file is subject to the Apache 2.0 license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Numbers\Internalization\Internalization\Model;
-class GroupsAR extends \Object\ActiveRecord {
 
+use Object\ActiveRecord;
 
-
+class GroupsAR extends ActiveRecord
+{
     /**
      * @var string
      */
-    public string $object_table_class = \Numbers\Internalization\Internalization\Model\Groups::class;
+    public string $object_table_class = Groups::class;
 
     /**
      * @var array
@@ -23,13 +33,13 @@ class GroupsAR extends \Object\ActiveRecord {
      *
      * @var int|null Domain: tenant_id Type: integer
      */
-    public int|null $in_group_tenant_id = NULL {
-                        get => $this->in_group_tenant_id;
-                        set {
-                            $this->setFullPkAndFilledColumn('in_group_tenant_id', $value);
-                            $this->in_group_tenant_id = $value;
-                        }
-                    }
+    public int|null $in_group_tenant_id = null {
+        get => $this->in_group_tenant_id;
+        set {
+            $this->setFullPkAndFilledColumn('in_group_tenant_id', $value);
+            $this->in_group_tenant_id = $value;
+        }
+    }
 
     /**
      * Group #
@@ -41,12 +51,12 @@ class GroupsAR extends \Object\ActiveRecord {
      * @var int|null Domain: group_id_sequence Type: serial
      */
     public int|null $in_group_id = null {
-                        get => $this->in_group_id;
-                        set {
-                            $this->setFullPkAndFilledColumn('in_group_id', $value);
-                            $this->in_group_id = $value;
-                        }
-                    }
+        get => $this->in_group_id;
+        set {
+            $this->setFullPkAndFilledColumn('in_group_id', $value);
+            $this->in_group_id = $value;
+        }
+    }
 
     /**
      * Name
@@ -58,12 +68,12 @@ class GroupsAR extends \Object\ActiveRecord {
      * @var string|null Domain: name Type: varchar
      */
     public string|null $in_group_name = null {
-                        get => $this->in_group_name;
-                        set {
-                            $this->setFullPkAndFilledColumn('in_group_name', $value);
-                            $this->in_group_name = $value;
-                        }
-                    }
+        get => $this->in_group_name;
+        set {
+            $this->setFullPkAndFilledColumn('in_group_name', $value);
+            $this->in_group_name = $value;
+        }
+    }
 
     /**
      * Native Name
@@ -75,12 +85,12 @@ class GroupsAR extends \Object\ActiveRecord {
      * @var string|null Domain: name Type: varchar
      */
     public string|null $in_group_native_name = null {
-                        get => $this->in_group_native_name;
-                        set {
-                            $this->setFullPkAndFilledColumn('in_group_native_name', $value);
-                            $this->in_group_native_name = $value;
-                        }
-                    }
+        get => $this->in_group_native_name;
+        set {
+            $this->setFullPkAndFilledColumn('in_group_native_name', $value);
+            $this->in_group_native_name = $value;
+        }
+    }
 
     /**
      * Country Code
@@ -92,12 +102,12 @@ class GroupsAR extends \Object\ActiveRecord {
      * @var string|null Domain: country_code Type: char
      */
     public string|null $in_group_country_code = null {
-                        get => $this->in_group_country_code;
-                        set {
-                            $this->setFullPkAndFilledColumn('in_group_country_code', $value);
-                            $this->in_group_country_code = $value;
-                        }
-                    }
+        get => $this->in_group_country_code;
+        set {
+            $this->setFullPkAndFilledColumn('in_group_country_code', $value);
+            $this->in_group_country_code = $value;
+        }
+    }
 
     /**
      * Currency Code
@@ -109,12 +119,12 @@ class GroupsAR extends \Object\ActiveRecord {
      * @var string|null Domain: currency_code Type: char
      */
     public string|null $in_group_currency_code = null {
-                        get => $this->in_group_currency_code;
-                        set {
-                            $this->setFullPkAndFilledColumn('in_group_currency_code', $value);
-                            $this->in_group_currency_code = $value;
-                        }
-                    }
+        get => $this->in_group_currency_code;
+        set {
+            $this->setFullPkAndFilledColumn('in_group_currency_code', $value);
+            $this->in_group_currency_code = $value;
+        }
+    }
 
     /**
      * Language Code
@@ -126,12 +136,12 @@ class GroupsAR extends \Object\ActiveRecord {
      * @var string|null Domain: language_code Type: char
      */
     public string|null $in_group_language_code = null {
-                        get => $this->in_group_language_code;
-                        set {
-                            $this->setFullPkAndFilledColumn('in_group_language_code', $value);
-                            $this->in_group_language_code = $value;
-                        }
-                    }
+        get => $this->in_group_language_code;
+        set {
+            $this->setFullPkAndFilledColumn('in_group_language_code', $value);
+            $this->in_group_language_code = $value;
+        }
+    }
 
     /**
      * Locale Code
@@ -143,12 +153,12 @@ class GroupsAR extends \Object\ActiveRecord {
      * @var string|null Domain: locale_code Type: varchar
      */
     public string|null $in_group_locale_code = null {
-                        get => $this->in_group_locale_code;
-                        set {
-                            $this->setFullPkAndFilledColumn('in_group_locale_code', $value);
-                            $this->in_group_locale_code = $value;
-                        }
-                    }
+        get => $this->in_group_locale_code;
+        set {
+            $this->setFullPkAndFilledColumn('in_group_locale_code', $value);
+            $this->in_group_locale_code = $value;
+        }
+    }
 
     /**
      * Timezone Code
@@ -160,12 +170,12 @@ class GroupsAR extends \Object\ActiveRecord {
      * @var string|null Domain: timezone_code Type: varchar
      */
     public string|null $in_group_timezone_code = null {
-                        get => $this->in_group_timezone_code;
-                        set {
-                            $this->setFullPkAndFilledColumn('in_group_timezone_code', $value);
-                            $this->in_group_timezone_code = $value;
-                        }
-                    }
+        get => $this->in_group_timezone_code;
+        set {
+            $this->setFullPkAndFilledColumn('in_group_timezone_code', $value);
+            $this->in_group_timezone_code = $value;
+        }
+    }
 
     /**
      * Organization #
@@ -176,13 +186,13 @@ class GroupsAR extends \Object\ActiveRecord {
      *
      * @var int|null Domain: organization_id Type: integer
      */
-    public int|null $in_group_organization_id = NULL {
-                        get => $this->in_group_organization_id;
-                        set {
-                            $this->setFullPkAndFilledColumn('in_group_organization_id', $value);
-                            $this->in_group_organization_id = $value;
-                        }
-                    }
+    public int|null $in_group_organization_id = null {
+        get => $this->in_group_organization_id;
+        set {
+            $this->setFullPkAndFilledColumn('in_group_organization_id', $value);
+            $this->in_group_organization_id = $value;
+        }
+    }
 
     /**
      * Inactive
@@ -194,12 +204,12 @@ class GroupsAR extends \Object\ActiveRecord {
      * @var int|null Type: boolean
      */
     public int|null $in_group_inactive = 0 {
-                        get => $this->in_group_inactive;
-                        set {
-                            $this->setFullPkAndFilledColumn('in_group_inactive', $value);
-                            $this->in_group_inactive = $value;
-                        }
-                    }
+        get => $this->in_group_inactive;
+        set {
+            $this->setFullPkAndFilledColumn('in_group_inactive', $value);
+            $this->in_group_inactive = $value;
+        }
+    }
 
     /**
      * Date Format
@@ -211,12 +221,12 @@ class GroupsAR extends \Object\ActiveRecord {
      * @var string|null Domain: code Type: varchar
      */
     public string|null $in_group_format_date = null {
-                        get => $this->in_group_format_date;
-                        set {
-                            $this->setFullPkAndFilledColumn('in_group_format_date', $value);
-                            $this->in_group_format_date = $value;
-                        }
-                    }
+        get => $this->in_group_format_date;
+        set {
+            $this->setFullPkAndFilledColumn('in_group_format_date', $value);
+            $this->in_group_format_date = $value;
+        }
+    }
 
     /**
      * Time Format
@@ -228,12 +238,12 @@ class GroupsAR extends \Object\ActiveRecord {
      * @var string|null Domain: code Type: varchar
      */
     public string|null $in_group_format_time = null {
-                        get => $this->in_group_format_time;
-                        set {
-                            $this->setFullPkAndFilledColumn('in_group_format_time', $value);
-                            $this->in_group_format_time = $value;
-                        }
-                    }
+        get => $this->in_group_format_time;
+        set {
+            $this->setFullPkAndFilledColumn('in_group_format_time', $value);
+            $this->in_group_format_time = $value;
+        }
+    }
 
     /**
      * Datetime Format
@@ -245,12 +255,12 @@ class GroupsAR extends \Object\ActiveRecord {
      * @var string|null Domain: code Type: varchar
      */
     public string|null $in_group_format_datetime = null {
-                        get => $this->in_group_format_datetime;
-                        set {
-                            $this->setFullPkAndFilledColumn('in_group_format_datetime', $value);
-                            $this->in_group_format_datetime = $value;
-                        }
-                    }
+        get => $this->in_group_format_datetime;
+        set {
+            $this->setFullPkAndFilledColumn('in_group_format_datetime', $value);
+            $this->in_group_format_datetime = $value;
+        }
+    }
 
     /**
      * Timestamp Format
@@ -262,12 +272,12 @@ class GroupsAR extends \Object\ActiveRecord {
      * @var string|null Domain: code Type: varchar
      */
     public string|null $in_group_format_timestamp = null {
-                        get => $this->in_group_format_timestamp;
-                        set {
-                            $this->setFullPkAndFilledColumn('in_group_format_timestamp', $value);
-                            $this->in_group_format_timestamp = $value;
-                        }
-                    }
+        get => $this->in_group_format_timestamp;
+        set {
+            $this->setFullPkAndFilledColumn('in_group_format_timestamp', $value);
+            $this->in_group_format_timestamp = $value;
+        }
+    }
 
     /**
      * Amounts In Forms
@@ -278,13 +288,13 @@ class GroupsAR extends \Object\ActiveRecord {
      *
      * @var int|null Domain: type_id Type: smallint
      */
-    public int|null $in_group_format_amount_frm = NULL {
-                        get => $this->in_group_format_amount_frm;
-                        set {
-                            $this->setFullPkAndFilledColumn('in_group_format_amount_frm', $value);
-                            $this->in_group_format_amount_frm = $value;
-                        }
-                    }
+    public int|null $in_group_format_amount_frm = null {
+        get => $this->in_group_format_amount_frm;
+        set {
+            $this->setFullPkAndFilledColumn('in_group_format_amount_frm', $value);
+            $this->in_group_format_amount_frm = $value;
+        }
+    }
 
     /**
      * Amounts In Financial Statement
@@ -295,13 +305,13 @@ class GroupsAR extends \Object\ActiveRecord {
      *
      * @var int|null Domain: type_id Type: smallint
      */
-    public int|null $in_group_format_amount_fs = NULL {
-                        get => $this->in_group_format_amount_fs;
-                        set {
-                            $this->setFullPkAndFilledColumn('in_group_format_amount_fs', $value);
-                            $this->in_group_format_amount_fs = $value;
-                        }
-                    }
+    public int|null $in_group_format_amount_fs = null {
+        get => $this->in_group_format_amount_fs;
+        set {
+            $this->setFullPkAndFilledColumn('in_group_format_amount_fs', $value);
+            $this->in_group_format_amount_fs = $value;
+        }
+    }
 
     /**
      * Unit of Measures
@@ -313,12 +323,12 @@ class GroupsAR extends \Object\ActiveRecord {
      * @var string|null Domain: group_code Type: varchar
      */
     public string|null $in_group_format_uom = 'METRIC' {
-                        get => $this->in_group_format_uom;
-                        set {
-                            $this->setFullPkAndFilledColumn('in_group_format_uom', $value);
-                            $this->in_group_format_uom = $value;
-                        }
-                    }
+        get => $this->in_group_format_uom;
+        set {
+            $this->setFullPkAndFilledColumn('in_group_format_uom', $value);
+            $this->in_group_format_uom = $value;
+        }
+    }
 
     /**
      * Optimistic Lock
@@ -330,10 +340,10 @@ class GroupsAR extends \Object\ActiveRecord {
      * @var string|null Domain: optimistic_lock Type: timestamp
      */
     public string|null $in_group_optimistic_lock = 'now()' {
-                        get => $this->in_group_optimistic_lock;
-                        set {
-                            $this->setFullPkAndFilledColumn('in_group_optimistic_lock', $value);
-                            $this->in_group_optimistic_lock = $value;
-                        }
-                    }
+        get => $this->in_group_optimistic_lock;
+        set {
+            $this->setFullPkAndFilledColumn('in_group_optimistic_lock', $value);
+            $this->in_group_optimistic_lock = $value;
+        }
+    }
 }

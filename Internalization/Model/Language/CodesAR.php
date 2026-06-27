@@ -1,14 +1,24 @@
 <?php
 
+/*
+ * This file is part of Numbers Framework.
+ *
+ * (c) Volodymyr Volynets <volodymyr.volynets@gmail.com>
+ *
+ * This source file is subject to the Apache 2.0 license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Numbers\Internalization\Internalization\Model\Language;
-class CodesAR extends \Object\ActiveRecord {
 
+use Object\ActiveRecord;
 
-
+class CodesAR extends ActiveRecord
+{
     /**
      * @var string
      */
-    public string $object_table_class = \Numbers\Internalization\Internalization\Model\Language\Codes::class;
+    public string $object_table_class = Codes::class;
 
     /**
      * @var array
@@ -23,13 +33,13 @@ class CodesAR extends \Object\ActiveRecord {
      *
      * @var int|null Domain: tenant_id Type: integer
      */
-    public int|null $in_language_tenant_id = NULL {
-                        get => $this->in_language_tenant_id;
-                        set {
-                            $this->setFullPkAndFilledColumn('in_language_tenant_id', $value);
-                            $this->in_language_tenant_id = $value;
-                        }
-                    }
+    public int|null $in_language_tenant_id = null {
+        get => $this->in_language_tenant_id;
+        set {
+            $this->setFullPkAndFilledColumn('in_language_tenant_id', $value);
+            $this->in_language_tenant_id = $value;
+        }
+    }
 
     /**
      * Language Code
@@ -41,12 +51,12 @@ class CodesAR extends \Object\ActiveRecord {
      * @var string|null Domain: language_code Type: char
      */
     public string|null $in_language_code = null {
-                        get => $this->in_language_code;
-                        set {
-                            $this->setFullPkAndFilledColumn('in_language_code', $value);
-                            $this->in_language_code = $value;
-                        }
-                    }
+        get => $this->in_language_code;
+        set {
+            $this->setFullPkAndFilledColumn('in_language_code', $value);
+            $this->in_language_code = $value;
+        }
+    }
 
     /**
      * Language Code (2)
@@ -58,12 +68,12 @@ class CodesAR extends \Object\ActiveRecord {
      * @var string|null Type: char
      */
     public string|null $in_language_code2 = null {
-                        get => $this->in_language_code2;
-                        set {
-                            $this->setFullPkAndFilledColumn('in_language_code2', $value);
-                            $this->in_language_code2 = $value;
-                        }
-                    }
+        get => $this->in_language_code2;
+        set {
+            $this->setFullPkAndFilledColumn('in_language_code2', $value);
+            $this->in_language_code2 = $value;
+        }
+    }
 
     /**
      * Name
@@ -75,12 +85,12 @@ class CodesAR extends \Object\ActiveRecord {
      * @var string|null Domain: name Type: varchar
      */
     public string|null $in_language_name = null {
-                        get => $this->in_language_name;
-                        set {
-                            $this->setFullPkAndFilledColumn('in_language_name', $value);
-                            $this->in_language_name = $value;
-                        }
-                    }
+        get => $this->in_language_name;
+        set {
+            $this->setFullPkAndFilledColumn('in_language_name', $value);
+            $this->in_language_name = $value;
+        }
+    }
 
     /**
      * Native Name
@@ -92,12 +102,12 @@ class CodesAR extends \Object\ActiveRecord {
      * @var string|null Domain: name Type: varchar
      */
     public string|null $in_language_native_name = null {
-                        get => $this->in_language_native_name;
-                        set {
-                            $this->setFullPkAndFilledColumn('in_language_native_name', $value);
-                            $this->in_language_native_name = $value;
-                        }
-                    }
+        get => $this->in_language_native_name;
+        set {
+            $this->setFullPkAndFilledColumn('in_language_native_name', $value);
+            $this->in_language_native_name = $value;
+        }
+    }
 
     /**
      * Right to Left
@@ -109,12 +119,12 @@ class CodesAR extends \Object\ActiveRecord {
      * @var int|null Type: boolean
      */
     public int|null $in_language_rtl = 0 {
-                        get => $this->in_language_rtl;
-                        set {
-                            $this->setFullPkAndFilledColumn('in_language_rtl', $value);
-                            $this->in_language_rtl = $value;
-                        }
-                    }
+        get => $this->in_language_rtl;
+        set {
+            $this->setFullPkAndFilledColumn('in_language_rtl', $value);
+            $this->in_language_rtl = $value;
+        }
+    }
 
     /**
      * Family Name
@@ -126,12 +136,12 @@ class CodesAR extends \Object\ActiveRecord {
      * @var string|null Domain: name Type: varchar
      */
     public string|null $in_language_family_name = null {
-                        get => $this->in_language_family_name;
-                        set {
-                            $this->setFullPkAndFilledColumn('in_language_family_name', $value);
-                            $this->in_language_family_name = $value;
-                        }
-                    }
+        get => $this->in_language_family_name;
+        set {
+            $this->setFullPkAndFilledColumn('in_language_family_name', $value);
+            $this->in_language_family_name = $value;
+        }
+    }
 
     /**
      * Country Code
@@ -143,12 +153,12 @@ class CodesAR extends \Object\ActiveRecord {
      * @var string|null Domain: country_code Type: char
      */
     public string|null $in_language_country_code = null {
-                        get => $this->in_language_country_code;
-                        set {
-                            $this->setFullPkAndFilledColumn('in_language_country_code', $value);
-                            $this->in_language_country_code = $value;
-                        }
-                    }
+        get => $this->in_language_country_code;
+        set {
+            $this->setFullPkAndFilledColumn('in_language_country_code', $value);
+            $this->in_language_country_code = $value;
+        }
+    }
 
     /**
      * Inactive
@@ -160,12 +170,12 @@ class CodesAR extends \Object\ActiveRecord {
      * @var int|null Type: boolean
      */
     public int|null $in_language_inactive = 0 {
-                        get => $this->in_language_inactive;
-                        set {
-                            $this->setFullPkAndFilledColumn('in_language_inactive', $value);
-                            $this->in_language_inactive = $value;
-                        }
-                    }
+        get => $this->in_language_inactive;
+        set {
+            $this->setFullPkAndFilledColumn('in_language_inactive', $value);
+            $this->in_language_inactive = $value;
+        }
+    }
 
     /**
      * Optimistic Lock
@@ -177,10 +187,10 @@ class CodesAR extends \Object\ActiveRecord {
      * @var string|null Domain: optimistic_lock Type: timestamp
      */
     public string|null $in_language_optimistic_lock = 'now()' {
-                        get => $this->in_language_optimistic_lock;
-                        set {
-                            $this->setFullPkAndFilledColumn('in_language_optimistic_lock', $value);
-                            $this->in_language_optimistic_lock = $value;
-                        }
-                    }
+        get => $this->in_language_optimistic_lock;
+        set {
+            $this->setFullPkAndFilledColumn('in_language_optimistic_lock', $value);
+            $this->in_language_optimistic_lock = $value;
+        }
+    }
 }
